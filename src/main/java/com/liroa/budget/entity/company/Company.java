@@ -1,5 +1,6 @@
 package com.liroa.budget.entity.company;
 
+import com.liroa.budget.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +24,10 @@ public class Company {
     private String address;
     private String phone;
     private String mail;
+
+    @OneToOne
+    @JoinColumn(name = "id_user")
+    private User user;
 
 
 
